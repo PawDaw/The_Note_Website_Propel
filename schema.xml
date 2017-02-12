@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="default" defaultIdMethod="native" defaultPhpNamingMethod="underscore">
+
+  <table name="note" idMethod="native" phpName="Note">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+    <column name="note" type="varchar" size="255" required="true" /> 
+  </table>
+  
+  <table name="person" idMethod="native" phpName="Person">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+    <column name="name" type="varchar" size="255" required="true" />
+    <column name="pass" type="varchar" size="255" required="true" />
+  </table>
+
+  
+  <table name="person_note" idMethod="native" phpName="Person_note">
+  
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+    <column name="person_id" type="integer" required="true" />
+    <column name="note_id" type="integer" required="true" />
+    
+     <foreign-key foreignTable="person" name="fk__note">
+            <reference local="person_id" foreign="id"/>
+     </foreign-key>
+    
+     <foreign-key foreignTable="note" name="fk__user">
+            <reference local="note_id" foreign="id"/>
+     </foreign-key>
+    
+  </table>
+  
+  
+</database>
