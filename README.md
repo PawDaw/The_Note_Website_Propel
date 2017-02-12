@@ -38,6 +38,6 @@ In this assignment I used:
 ## Propel classes
 
 <p align="center">
-  <img src="example_3.png" width="550"/>
+  <img src="example_3.png" width="350"/>
   
 </p>
